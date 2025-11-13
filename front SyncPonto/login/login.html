@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyncPonto - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <div class="logo">
+        <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
+      </div>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+            <polyline points="3 7,12 13,21 7"/>
+          </svg>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Senha" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" id="remember"> Lembre de mim
+          </label>
+          <a href="../esqueciSenha/esqueciSenha.html" class="forgot">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <p class="signup">Não tem conta? <a href="../cadastro/index.html">Cadastre-se</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

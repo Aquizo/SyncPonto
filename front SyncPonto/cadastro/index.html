@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyncPonto - Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="signup-box">
+      <div class="logo">
+        <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
+
+        <a href="../login/login.css"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a>
+      </div>
+
+      <form id="signupForm" onsubmit="window.location.href='../login/login.html'">
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Nome completo" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+            <polyline points="3 7,12 13,21 7"/>
+          </svg>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Senha" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="confirmPassword" placeholder="Confirme a senha" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+
+        <button type="submit" class="btn">Cadastrar</button>
+
+        <p class="login">Já tem conta? <a href="../login/login.html">Faça login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

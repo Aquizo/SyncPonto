@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyncPonto</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <div class="logo">
+        <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
+
+        <a href="../login/login.html"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a>
+      </div>
+
+
+      <p class="text">Informe seu email para enviarmos um código para mudança de senha</p>
+      <form id="loginForm" onsubmit="window.location.href='esqueciSenha2.html'">
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+            <polyline points="3 7,12 13,21 7"/>
+          </svg>
+        </div>
+
+
+        <button type="submit" class="btn">Confirmar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
