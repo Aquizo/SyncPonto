@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     signupForm.addEventListener('submit', function(event) {
         event.preventDefault();
         
-        const name = document.getElementById('name').value.trim();
+        const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value.trim();
         const confirmPassword = document.getElementById('confirmPassword').value.trim();
         
-        if (!name || !email || !password || !confirmPassword) {
+        if (!nome || !email || !password || !confirmPassword) {
             alert('Por favor, preencha todos os campos.');
             return;
         }
@@ -34,10 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        users.push({ name, email, password });
+        users.push({ nome, email, password });
         localStorage.setItem('users', JSON.stringify(users));
         
         alert('Cadastro realizado com sucesso! Faça login para continuar.');
         window.location.href = 'login.html';
     });
 });
+
+document.getElementById("digitarNome").innerText = nome;
+document.getElementById("digitarEmail").innerText = email;

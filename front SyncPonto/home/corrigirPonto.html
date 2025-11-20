@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyncPonto - Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="signup-box">
+      <div class="logo">
+        <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
+
+        <a href="home.html"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a>
+      </div>
+
+      <p class="text">Atençao o seguinte procedimento requer uma justificativa e será analisado conforme superior</p>
+      <form id="formCorrigir" onsubmit="window.location.href='home.html'">
+        <div class="input-group">
+            <label class="text" for="corrigir">Diga se irá corrigir o ponto de saída ou de entrada</label><br>
+            <select id="corrigir">
+                <option name="opcao" value="entrada">Entrada</option>
+                <option name="opcao" value="saida">Saída</option>
+            </select> 
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Senha" required>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+
+        <div class="input-group">
+          <input type="text" placeholder="Justificativa" required>
+          <img src="" alt="">
+        </div>
+
+        <button type="submit" class="btn">Alterar</button>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
