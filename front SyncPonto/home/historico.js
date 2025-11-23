@@ -1,41 +1,41 @@
+let mesAtual = new Date().getMonth();
+let anoAtual = new Date().getFullYear();
+
+function lerCookie(nome) {
+    const partes = document.cookie.split("; ").find(row => row.trim().startsWith(nome + "="));
+    return partes ? partes.split("=")[1] : null;
+}
+
 function getNomeMes(mes) {
     const meses = [
-        'Janeiro', 'Fevereiro', 'Março', 'Abril', 
-        'Maio', 'Junho', 'Julho', 'Agosto', 
-        'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        'Janeiro','Fevereiro','Março','Abril',
+        'Maio','Junho','Julho','Agosto',
+        'Setembro','Outubro','Novembro','Dezembro'
     ];
     return meses[mes];
 }
 
-// Função principal para renderizar o calendário
 function renderCalendario() {
-    const dataAtual = new Date();
-    const mesAtual = dataAtual.getMonth();
-    const anoAtual = dataAtual.getFullYear();
-    const diaAtual = dataAtual.getDate();
+    const dataHoje = new Date();
+    const diaAtual = dataHoje.getDate();
 
-    // Atualiza o cabeçalho com mês e ano
     const headerElement = document.getElementById('mes-ano');
     headerElement.textContent = `${getNomeMes(mesAtual)} ${anoAtual}`;
 
-    // Primeiro dia do mês e quantidade de dias no mês
-    const primeiroDiaDoMes = new Date(anoAtual, mesAtual, 1).getDay();
-    const ultimoDiaDoMes = new Date(anoAtual, mesAtual + 1, 0).getDate();
+    const primeiroDia = new Date(anoAtual, mesAtual, 1).getDay();
+    const ultimoDia = new Date(anoAtual, mesAtual + 1, 0).getDate();
 
     const tbody = document.getElementById('dias-calendario');
-    tbody.innerHTML = ''; // Limpa conteúdo anterior
+    tbody.innerHTML = '';
 
     let linha = document.createElement('tr');
     let diaContador = 1;
 
-    // Adiciona células vazias antes do primeiro dia do mês
-    for (let i = 0; i < primeiroDiaDoMes; i++) {
-        const celulaVazia = document.createElement('td');
-        linha.appendChild(celulaVazia);
+    for (let i = 0; i < primeiroDia; i++) {
+        linha.appendChild(document.createElement('td'));
     }
 
-    // Renderiza os dias do mês
-    while (diaContador <= ultimoDiaDoMes) {
+    while (diaContador <= ultimoDia) {
         if (linha.children.length === 7) {
             tbody.appendChild(linha);
             linha = document.createElement('tr');
@@ -44,12 +44,18 @@ function renderCalendario() {
         const coluna = document.createElement('td');
         coluna.textContent = diaContador;
 
-        // Marca o dia atual
-        if (diaContador === diaAtual && mesAtual === dataAtual.getMonth()) {
+        coluna.dataset.dia = diaContador;
+        coluna.dataset.mes = mesAtual + 1; 
+        coluna.dataset.ano = anoAtual;
+
+        if (
+            diaContador === diaAtual &&
+            mesAtual === dataHoje.getMonth() &&
+            anoAtual === dataHoje.getFullYear()
+        ) {
             coluna.classList.add('dia-atual');
         }
 
-        // Marca fins de semana
         const diaSemana = new Date(anoAtual, mesAtual, diaContador).getDay();
         if (diaSemana === 0 || diaSemana === 6) {
             coluna.classList.add('fim-de-semana');
@@ -59,11 +65,48 @@ function renderCalendario() {
         diaContador++;
     }
 
-    // Adiciona a última linha se necessário
     if (linha.children.length > 0) {
         tbody.appendChild(linha);
     }
+
+    aplicarPontoSalvo();
 }
 
-// Renderiza o calendário quando a página carregar
+function proximoMes() {
+    mesAtual++;
+    if (mesAtual > 11) {
+        mesAtual = 0;
+        anoAtual++;
+    }
+    renderCalendario();
+}
+
+function mesAnterior() {
+    mesAtual--;
+    if (mesAtual < 0) {
+        mesAtual = 11;
+        anoAtual--;
+    }
+    renderCalendario();
+}
+
+function aplicarPontoSalvo() {
+    const valor = lerCookie("pontoBatido");
+    if (!valor) return;
+
+    const [dia, mes, ano] = valor.split("-").map(Number);
+
+    const celulas = document.querySelectorAll("#dias-calendario td");
+
+    celulas.forEach(c => {
+        if (
+            Number(c.dataset.dia) === dia &&
+            Number(c.dataset.mes) === mes + 1 &&
+            Number(c.dataset.ano) === ano
+        ) {
+            c.classList.add("dia-ponto");
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', renderCalendario);

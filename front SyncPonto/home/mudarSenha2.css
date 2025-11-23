@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d74c0;
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.05) 0,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.05) 0,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 40px
+    );
+}
+
+.container {
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 40px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+  position: relative; /* Necessário para posicionar o ícone de voltar */
+}
+
+/* Estilo para a seção do logo e do ícone de voltar */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.logo > img.logo {
+  width: 150px;
+  height: auto;
+  /* Centraliza a imagem do logo */
+}
+
+/* Ícone de Voltar: Posição ajustada */
+.logo a {
+    position: absolute;
+    top: 5px; /* Ajuste fino */
+    right: 0px; /* Alinha à direita da caixa */
+}
+
+.logo .icons {
+  width: 25px;
+  height: 25px;
+  /* Remove as propriedades de posicionamento absoluto fixo que estavam incorretas */
+  padding-left: 0;
+  top: initial;
+  position: static;
+}
+
+/* Texto de instrução */
+.text {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  /* Aumenta o padding da direita para dar espaço para o ícone */
+  padding: 12px 40px 12px 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  flex: 1;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+.input-group input::placeholder {
+  color: rgba(255,255,255,0.8);
+}
+
+.icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: white; /* Cor ajustada para branco para ser visível */
+  pointer-events: none;
+}
+
+.btn {
+  width: 100%;
+  background: #004c7e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+  margin-top: 10px; 
+}
+
+.btn:hover {
+  background: #0070c1;
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  transform: translateY(-1px);
+}

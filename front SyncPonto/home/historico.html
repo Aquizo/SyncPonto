@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="historico.css">
-    <title>SyncPonto</title>
+    <title>SyncPonto - Histórico</title>
 </head>
 <body>
 
-    <div class="container">
-        <div class="box">
+<div class="container">
+    <div class="box">
         <div class="logo">
-        <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
-
-        <a href="home.html"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a>
+            <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
+            <a href="home.html"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a>
         </div>
-            <div class="calendario">
-  <div class="calendario-header" id="mes-ano">
-    Carregando...
-  </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Dom</th>
-        <th>Seg</th>
-        <th>Ter</th>
-        <th>Qua</th>
-        <th>Qui</th>
-        <th>Sex</th>
-        <th>Sáb</th>
-      </tr>
-    </thead>
-    <tbody id="dias-calendario">
-    </tbody>
-  </table>
-</div>
-
+        <div class="calendario">
+            <div class="calendario-nav">
+                <button onclick="mesAnterior()">← Anterior</button>
+                <h2 id="mes-ano">Carregando...</h2> 
+                <button onclick="proximoMes()">Próximo →</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Seg</th>
+                        <th>Ter</th>
+                        <th>Qua</th>
+                        <th>Qui</th>
+                        <th>Sex</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody id="dias-calendario">
+                  
+                </tbody>
+            </table>
         </div>
     </div>
-    
+</div>
+
 <script src="historico.js"></script>
 </body>
 </html>

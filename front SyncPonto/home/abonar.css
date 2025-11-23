@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d74c0;
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.05) 0,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.05) 0,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 40px
+    );
+}
+
+.container {
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 40px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.logo-area {
+  position: relative;
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+.icons{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 0px; 
+  top: 0px; 
+}
+
+.logo-img { 
+  width: 150px;
+  height: auto;
+}
+
+.logo h2 { 
+  color: white;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 40px 12px 12px; 
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  flex: 1;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+.input-group input::placeholder {
+  color: rgba(255,255,255,0.8);
+}
+
+.icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #111;
+  pointer-events: none;
+}
+
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-label {
+  width: 100%;
+  text-align: left;
+  padding: 12px 12px 12px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: rgba(255,255,255,0.8); 
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  transition: box-shadow 0.3s ease;
+}
+
+.file-label:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.file-input:focus + .file-label {
+  box-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+.file-label .icon {
+  position: static; 
+  transform: none;
+  margin-left: 10px;
+  color: white; 
+}
+
+.btn {
+  width: 100%;
+  background: #004c7e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+.btn:hover {
+  background: #0070c1;
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  transform: translateY(-1px);
+}

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SyncPonto - Cadastro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="corrigirponto.css">
 </head>
 <body>
   <div class="container">
@@ -16,13 +16,16 @@
       </div>
 
       <p class="text">Atençao o seguinte procedimento requer uma justificativa e será analisado conforme superior</p>
-      <form id="formCorrigir" onsubmit="window.location.href='home.html'">
-        <div class="input-group">
-            <label class="text" for="corrigir">Diga se irá corrigir o ponto de saída ou de entrada</label><br>
-            <select id="corrigir">
-                <option name="opcao" value="entrada">Entrada</option>
-                <option name="opcao" value="saida">Saída</option>
-            </select> 
+      <form id="form">
+        <div class="input-group radio-group">
+            <label class="text" for="corrigir">Diga se irá corrigir o ponto de:</label>
+            <div class="radio-options">
+                <input type="radio" id="entrada" name="tipo_correcao" value="entrada" required checked>
+                <label for="entrada">Entrada</label>
+
+                <input type="radio" id="saida" name="tipo_correcao" value="saida" required>
+                <label for="saida">Saída</label>
+            </div>
         </div>
 
         <div class="input-group">

@@ -4,37 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SyncPonto - Cadastro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="abonar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <div class="signup-box">
+      <div class="logo-area">
+        <img class="logo-img" src="../icons/Logo.png" alt="Logo SyncPonto">
+        <a href="home.html"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a> </div>
+      
       <div class="logo">
-        <img class="logo" src="../icons/Logo.png" alt="Logo SyncPonto">
-
-        <a href="home.html"><img class="icons" src="../icons/voltar.png" alt="Voltar"></a>
+        <h2>Abonar Falta</h2>
       </div>
 
-      <form id="formAbonar" onsubmit="window.location.href='home.html'">
-        <p class="text">Abonar Falta</p>
-        <div class="input-group">
-        </div>
-
+      <form id="form">
+        
         <div class="input-group">
           <input type="date" id="data" placeholder="Data" required>
+          <i class="icon fas fa-calendar-alt"></i>
         </div>
 
         <div class="input-group">
-          <input type="text" placeholder="Descreva o motivo" required>
+          <input type="text" id="motivo" placeholder="Descreva o motivo" required>
+          <i class="icon fas fa-pencil-alt"></i>
         </div>
 
-        <div class="input-group">
-          <input type="file" placeholder="Justificativa" required>
+        <div class="input-group file-upload-group">
+          <input type="file" id="justificativa" class="file-input" required>
+          <label for="justificativa" class="file-label">Anexar Justificativa (PDF/Imagem) <i class="icon fas fa-upload"></i></label>
         </div>
 
         <button type="submit" class="btn">Enviar requerimento</button>
 
       </form>
+      
     </div>
   </div>
 

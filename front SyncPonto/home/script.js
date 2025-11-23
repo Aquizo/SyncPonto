@@ -1,33 +1,45 @@
-function mostrarDataHora() {
+document.getElementById("btn-bater-ponto").addEventListener("click", () => {
     const agora = new Date();
 
-    const dia = agora.getDate().toString().padStart(2, "0");
-    const mes = (agora.getMonth() + 1).toString().padStart(2, "0");
+    const dia = agora.getDate();
+    const mes = agora.getMonth();
     const ano = agora.getFullYear();
 
-    const horas = agora.getHours().toString().padStart(2, "0");
-    const minutos = agora.getMinutes().toString().padStart(2, "0");
+    const confirmar = confirm(`Confirmar ponto em ${dia}/${mes+1}/${ano}?`);
+    if (!confirmar) return;
 
-    const dataHora = `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+    document.cookie = `pontoBatido=${dia}-${mes}-${ano}; path=/;`;
 
-    document.getElementById("dataHora").innerText = dataHora;
-}
-
-setInterval(mostrarDataHora, 1000);
-
-mostrarDataHora();
-
-//Formulário Corrigir Ponto
-document.getElementById("formCorrigir").addEventListener("submit", function(event) {
-    event.preventDefault()
-
-    const opcao = document.querySelector('input[name="opcao"]:checked')
-    const opcaoSelecionada = opcao ? opcao.value : "Nenhuma opção selecionada"
-    if(){
-
-    }
-    const justificativa = document.getElementById("justificativa").value.trim() ||
-
+    alert("Ponto registrado! Abra o calendário para ver.");
 });
 
-//Formulário Abonar Falta
+
+document.addEventListener("DOMContentLoaded", () => {
+    function mostrarDataHora() {
+        const agora = new Date();
+        const dia = String(agora.getDate()).padStart(2,"0");
+        const mes = String(agora.getMonth()+1).padStart(2,"0");
+        const ano = agora.getFullYear();
+        const horas = String(agora.getHours()).padStart(2,"0");
+        const minutos = String(agora.getMinutes()).padStart(2,"0");
+        const dataHora = `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+        document.getElementById("dataHora").textContent = dataHora;
+    }
+    mostrarDataHora();
+    setInterval(mostrarDataHora, 1000);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM carregado");
+    const formulario = document.getElementById("form");
+    if (!formulario) {
+        console.error("Formulário não encontrado!");
+        return;
+    }
+
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Formulário enviado!");
+    });
+});

@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-       
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const existingUser = users.find(user => user.email === email);
         
@@ -38,9 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('users', JSON.stringify(users));
         
         alert('Cadastro realizado com sucesso! Faça login para continuar.');
-        window.location.href = 'login.html';
+        window.location.href = '../login/login.html';
     });
 });
-
-document.getElementById("digitarNome").innerText = nome;
-document.getElementById("digitarEmail").innerText = email;
